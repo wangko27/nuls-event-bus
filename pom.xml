@@ -4,6 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.1.RELEASE</version>
+    </parent>
+
     <groupId>io.nuls</groupId>
     <artifactId>nuls-event-bus</artifactId>
     <version>1.0.0-SNAPSHOT</version>
@@ -16,31 +22,40 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
-        <!-- common-tools -->
         <dependency>
-            <groupId>io.nuls.nuls-tools</groupId>
-            <artifactId>common-tools</artifactId>
-            <version>${tool.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
-        <!-- base-tools -->
-        <dependency>
-            <groupId>io.nuls.nuls-tools</groupId>
-            <artifactId>base-tools</artifactId>
-            <version>${tool.version}</version>
-        </dependency>
-        <!-- rpc-tools -->
-        <dependency>
-            <groupId>io.nuls.nuls-tools</groupId>
-            <artifactId>rpc-tools</artifactId>
-            <version>${tool.version}</version>
-        </dependency>
-        <!-- storage-tools -->
-        <dependency>
-            <groupId>io.nuls.nuls-tools</groupId>
-            <artifactId>storage-tools</artifactId>
-            <version>${tool.version}</version>
-        </dependency>
+
+        <!--&lt;!&ndash; common-tools &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>io.nuls.nuls-tools</groupId>-->
+            <!--<artifactId>common-tools</artifactId>-->
+            <!--<version>${tool.version}</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; base-tools &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>io.nuls.nuls-tools</groupId>-->
+            <!--<artifactId>base-tools</artifactId>-->
+            <!--<version>${tool.version}</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; rpc-tools &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>io.nuls.nuls-tools</groupId>-->
+            <!--<artifactId>rpc-tools</artifactId>-->
+            <!--<version>${tool.version}</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; storage-tools &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>io.nuls.nuls-tools</groupId>-->
+            <!--<artifactId>storage-tools</artifactId>-->
+            <!--<version>${tool.version}</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -61,6 +76,12 @@
             <version>1.18.2</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -72,6 +93,10 @@
                     <source>11</source>
                     <target>11</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
